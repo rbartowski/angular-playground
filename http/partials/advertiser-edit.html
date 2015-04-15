@@ -1,0 +1,27 @@
+<div ng-controller="AdvertiserEditCtrl">
+  <form novalidate name="advertiserForm" ng-submit="update(advertiserForm.$valid)">
+
+    <!-- NAME -->
+    <div class="form-group" ng-class="{ 'has-error' : advertiserForm.name.$invalid && !advertiserForm.name.$pristine }">
+      <label>Name</label>
+      <input type="text" name="name" class="form-control" ng-model="advertiser.name" ng-model-options="{ updateOn: 'blur' }" required>
+      <p ng-show="advertiserForm.name.$invalid && !advertiserForm.name.$pristine" class="help-block">Advertiser's name is required.</p>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="form-group" ng-class="{ 'has-error' : advertiserForm.email.$invalid && !advertiserForm.email.$pristine }">
+      <label>Email</label>
+      <input type="email" name="email" class="form-control" ng-model="advertiser.email" />
+      <p ng-show="advertiserForm.email.$invalid && !advertiserForm.email.$pristine" class="help-block">Enter a valid email.</p>
+    </div>
+
+    <!--OWNER NAME-->
+    <div class="form-group">
+      <label>Owner Name</label>
+      <input type="text" name="ownerName" class="form-control" ng-model="advertiser.ownerName">
+      <p ng-show="advertiserForm.ownerName.$invalid && !advertiserForm.ownerName.$pristine" class="help-block">Enter a valid email.</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>

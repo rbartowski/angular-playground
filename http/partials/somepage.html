@@ -1,0 +1,10 @@
+<div ng-controller="SomeCtrl">
+  <div>
+    <input type="button" class="btn" value="red border" ng-click="myStyle={'border-style':'solid', 'border-color': 'red', 'border-width': '2px'}">
+    <input type="button" class="btn" value="green border" ng-click="myStyle={'border-style':'solid', 'border-color': 'green', 'border-width': '2px'}">
+    <label>Let's Draw!</label>
+  </div>
+  <div>
+  <canvas drawing ng-style="myStyle" width="800" height="600""></canvas>
+  <div>
+</div>
