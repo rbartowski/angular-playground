@@ -1,12 +1,12 @@
 'use strict';
 
-
 var advertiserApp = angular.module('advertiserApp', [
   'ngRoute',
   'appControllers',
   'appServices'
 ]);
 
+//routing
 advertiserApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -32,20 +32,17 @@ advertiserApp.config(['$routeProvider',
   }
 ]);
 
+//trying custom directive
 advertiserApp.directive("drawing", function(){
   return {
     restrict: "A",
     link: function(scope, element){
-      var ctx = element[0].getContext('2d');
-
-      // variable that decides if something should be drawn on mousemove
-      var drawing = false;
-
-      // the last coordinates before the current move
-      var lastX;
-      var lastY;
-      var currentX;
-      var currentY;
+      var ctx = element[0].getContext('2d').
+        drawing = false,
+        lastX,
+        lastY,
+        currentX,
+        currentY;
 
       element.bind('mousedown', function(event){
         if(event.offsetX!==undefined){
