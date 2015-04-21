@@ -1,0 +1,23 @@
+<h4>General</h4>
+<div class="container" ng-controller="AdvertiserDetailsGeneralCtrl">
+  <div class="row">
+    <label>Name</label>
+    <p>{{advertiser.name}}</p>
+  </div>
+  <div class="row">
+    <label>ownerName</label>
+    <p>{{advertiser.ownerName}}</p>
+  </div>
+  <div class="row">
+    <label>Domain</label>
+    <p>{{advertiser.domain}}</p>
+  </div>
+  <div class="row">
+    <label>Email</label>
+    <p>{{advertiser.email}}</p>
+  </div>
+  <div class="row">
+    <label>Created</label>
+    <p>{{advertiser.created | date: 'yyyy-MM-dd'}}</p>
+  </div>
+</div>

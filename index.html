@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="en" ng-app="advertiserApp">
+<html lang="en" ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>Homework</title>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/main.css">
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-route/angular-route.js"></script>
-    <script src="/http/js/app/advertiserApp.js"></script>
-    <script src="/http/js/controllers/controllers.js"></script>
-    <script src="/http/js/services/services.js"></script>
+    <script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/public/js/app/app.js"></script>
+    <script src="/public/js/controllers/controllers.js"></script>
+    <script src="/public/js/services/services.js"></script>
   </head>
   <body style="padding-top: 70px">
     <!-- Fixed navbar -->
@@ -24,9 +26,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#/advertisers">Advertisers</a></li>
-            <li><a href="#/Doge">Doge</a></li>
-            <li><a href="#/SomePage">Magic and Fun</a></li>
+            <li ui-sref-active="active"><a ui-sref="advertisers">Advertisers</a></li>
+            <li ui-sref-active="active"><a ui-sref="doge">Doge</a></li>
+            <li ui-sref-active="active"><a ui-sref="fun">Magic and Fun</a></li>
           </ul>
         </div>
 
@@ -34,7 +36,7 @@
     </nav>
 
     <div class="container">
-      <div ng-view></div>
+      <div ui-view></div>
     </div>
 
     </body>

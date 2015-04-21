@@ -1,0 +1,27 @@
+<h4>Settings</h4>
+<div ng-controller="AdvertiserDetailsSettingsCtrl">
+  <form novalidate name="advertiserForm" ng-submit="advertiserForm.$valid && update()">
+
+    <!-- NAME -->
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" class="form-control" ng-model="advertiser.name" ng-model-options="{ updateOn: 'blur' }" required>
+      <p ng-show="advertiserForm.name.$invalid && !advertiserForm.name.$pristine" class="help-block requiredlbl">Advertiser's name is required.</p>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" class="form-control" ng-model="advertiser.email" required/>
+      <p ng-show="advertiserForm.email.$invalid && !advertiserForm.email.$pristine" class="help-block" ng-class="{ 'warninglbl': advertiserForm.email.$error.email, 'requiredlbl': advertiserForm.email.$error.required}">Enter a valid email.</p>
+    </div>
+
+    <!--OWNER NAME-->
+    <div class="form-group">
+      <label>Owner Name</label>
+      <input type="text" name="ownerName" class="form-control" ng-model="advertiser.ownerName">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>
